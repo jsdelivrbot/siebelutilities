@@ -1,1 +1,1 @@
-alert("utilities are loaded");
+$("<div>Request:<br><textarea id='request'></textarea><br>Response:<br><textarea id='response'></textarea><br><button id='Execute'>Execute</button></div>").dialog();$("#Execute").click(function(){$('#response').val(eval($('#request').val()));});
