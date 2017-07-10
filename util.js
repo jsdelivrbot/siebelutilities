@@ -1,4 +1,4 @@
-$("<div>Request:<br><textarea id='request'></textarea><br>Response:<br><textarea id='response'></textarea><br><button id='Execute'>Execute</button></div>").dialog();
+$("<div>Request:<br><textarea id='request' rows='12' cols='90'></textarea><br><button id='Execute'>Execute</button><br>Response:<br><textarea id='response' rows='12' cols='90'></textarea></div>").dialog();
 $("#Execute").click(function(){
   try{
   eval($('#request').val());
