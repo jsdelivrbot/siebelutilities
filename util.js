@@ -1,4 +1,5 @@
-$("<div>Request:<br><textarea id='request' rows='12' cols='90'></textarea><br><button id='Execute'>Execute</button><br>Response:<br><textarea rows='12' cols='90' id='response' rows='12' cols='90'></textarea></div>").dialog({width:'auto'});
+$("#console_wrapper").remove();
+$("<div id='console_wrapper'>Request:<br><textarea id='request' rows='12' cols='90'></textarea><br><button id='Execute'>Execute</button><br>Response:<br><textarea rows='12' cols='90' id='response' rows='12' cols='90'></textarea></div>").dialog({width:'auto'});
 $("#Execute").click(function(){
   try{
   eval($('#request').val());
