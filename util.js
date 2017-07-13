@@ -18,6 +18,25 @@ catch(err){
 console.log(err);
 }
 });
+$("#ExecuteServer").click(function(){
+try{
+var psInputs = SiebelApp.S_App.NewPropertySet();
+psInputs.SetProperty();  
+SiebelApp.S_App.GetService("CCB Bundle OUI Service").InvokeMethod("CallBS", psInputs, {
+scope : this,
+selfbusy : true,
+async : true,
+cb : function ()
+{
+SiebelApp.BOUIUtil.removeLoad();   
+}});
+
+  }
+catch(err){
+console.log(err);
+}
+});
+
 console.log = function(str) {$("#response").val(str);};
 console.error = function(str) {$("#response").val(str);};
 console.assert = function(str) {$("#response").val(str);};
