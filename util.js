@@ -3,7 +3,7 @@ $("<div id='console_wrapper'>Request:<br><textarea id='request' rows='12' cols='
   "<button id='ClearReq'>Clear</button><button id='Execute'>Execute JS</button>" +
   "<button id='ExecuteServer'>Execute eScript</button><br>Response:<br>" +
   "<textarea rows='12' cols='90' id='response' rows='12' cols='90'></textarea>" +
-  "<button id='ClearRespose'>Clear</button></div>").dialog({width:'auto'});
+  "<br><button id='ClearRespose'>Clear</button></div>").dialog({width:'auto'});
 $("#ClearReq").click(function(){
 $('#request').val("");
 });
