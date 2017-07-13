@@ -20,9 +20,14 @@ console.log(err);
 });
 $("#ExecuteServer").click(function(){
 try{
-var psInputs = SiebelApp.S_App.NewPropertySet();
-psInputs.SetProperty();  
-SiebelApp.S_App.GetService("CCB Bundle OUI Service").InvokeMethod("CallBS", psInputs, {
+SiebelApp.BOUIUtil.showLoad();
+var psChild = SiebelApp.S_App.NewPropertySet();
+psChild.SetValue($('#request').val());
+var Inputs = SiebelApp.S_App.NewPropertySet();
+							Inputs.SetProperty("Service", "SIA PMT OUI Edition"); 
+							Inputs.SetProperty("Method", "SubmitOrder"); 
+							Inputs.AddChild(psChild);  
+SiebelApp.S_App.GetService("").InvokeMethod("", Inputs, {
 scope : this,
 selfbusy : true,
 async : true,
