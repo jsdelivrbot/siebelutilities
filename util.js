@@ -27,13 +27,14 @@ var Inputs = SiebelApp.S_App.NewPropertySet();
 							Inputs.SetProperty("Service", "SIA PMT OUI Edition"); 
 							Inputs.SetProperty("Method", "SubmitOrder"); 
 							Inputs.AddChild(psChild);  
-SiebelApp.S_App.GetService("").InvokeMethod("", Inputs, {
+SiebelApp.S_App.GetService("CCB Bundle OUI Service").InvokeMethod("CallBS", Inputs, {
 scope : this,
 selfbusy : true,
 async : true,
 cb : function ()
 {
-SiebelApp.BOUIUtil.removeLoad();   
+SiebelApp.BOUIUtil.removeLoad();
+$("#response").val(arguments[2].GetChildByType("ResultSet").GetProperty("Status"));
 }});
 
   }
